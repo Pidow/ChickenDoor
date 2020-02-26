@@ -1,27 +1,26 @@
-
   #include <TinyWireM.h>
   #include "TinyRTClib.h"
-  RTC_DS1307 RTC;
 
+  RTC_DS1307 RTC;
+  #define DS1307_ADDR   0x68
   #include <SimpleServo.h>
   SimpleServo servo;
-
+//VARIABLE
 int TSTART=10;
-int TEND=19;
+int TEND=20;
 int CLIGNO=0;
 int MOT=0;
 bool INITIA=0;
 int TEMPSREST=0;
+int TSUPP=0;
 long TEMPSRESTT=0;
 bool PORTEOUV=0;
 int var=0;
-bool DEBUG=1;
+bool DEBUG=1; //Active les lumieres de communication.
 
 void setup () {
   pinMode(4, OUTPUT);
   pinMode(3, OUTPUT);
-
-
   pinMode(1, OUTPUT);
   servo.attach(1);
   servo.setMillisPer60Degrees(390); 
@@ -30,46 +29,57 @@ void setup () {
   servo.setPulseMillis(20);
 
 
-    TinyWireM.begin();
+   Serial.begin(115200);
+    TinyWireM.begin(); 
     RTC.begin();
     RTC.adjust(DateTime(__DATE__, __TIME__));
     if (! RTC.isrunning()) {
-                           RTC.adjust(DateTime(__DATE__, __TIME__));
+      RTC.adjust(DateTime(__DATE__, __TIME__));
                             }
+  TinyWireM.beginTransmission(DS1307_ADDR); // reset DS1307 register pointer 
+  TinyWireM.send(0);
+  //TinyWireM.requestFrom(DS1307_ADDR, 7);
+  
   changh();
 }
-
+ 
 void loop() {
     DateTime now = RTC.now();
 
     if(INITIA ==0) {
                     initia();
-                    CLIGNO=1;
+                    CLIGNO=1;//TEST LED
                     cligno();
                     delay (5000);
                     changh();
-                    if(DEBUG) {
+                    
+
+                        if(( now.hour() >= TSTART) && ( now.hour() < TEND)) { ouvrir(); }
+                        if(( now.hour() < TSTART) or ( now.hour() > TEND)) { fermer(); }
+                                            
+                    if(DEBUG) { //ON AFFICHE L'HEURE PAR CLIGNOTEMENT
                                CLIGNO=now.hour();               
                                 cligno();
                                 delay (5000);
                               }
                   }
 
-        
-    if( PORTEOUV == 0) {
-                              if( now.hour() >= TSTART) {
+    if( PORTEOUV == 0) { 
+                              if(( now.hour() >= TSTART) && ( now.hour() < TEND)) {
                                                       ouvrir();
                                                       } else {                                                                            
-                                                                                                                   
-                                                              TEMPSREST = (TSTART-now.hour());
+
+                                                              TSUPP = 0;
+                                                              if( now.hour() > TSTART) { TSUPP = ((24-now.hour())+TSTART); }
                                                               
-                                                   if(DEBUG) {                                                       
+                                                              TEMPSREST = (TSTART-now.hour());
+                                                              TEMPSREST = (TSUPP+TEMPSREST);
+                                                              
+                                                   if(DEBUG) {                                                      
                                                               CLIGNO=TEMPSREST;               
                                                               cligno();
                                                               delay (5000);
                                                              }
-
-                                                              
                                                               TEMPSRESTT=((TEMPSREST*60)+(now.minute())*60000);
                                                                if( TEMPSRESTT >= 10800000) {
                                                                                             TEMPSRESTT=10800000;
@@ -82,20 +92,18 @@ void loop() {
 
 
     if( PORTEOUV == 1) {
-                         if( now.hour() >= TEND) {
+                         if(( now.hour() < TSTART) or ( now.hour() >= TEND)) {
                                                       fermer();
                                                       changh();
-                                                   } else {
-                                                                                                                    
+                                                   } else {                                                   
                                                               TEMPSREST=(TEND-now.hour());
                                                               
-                                                  if(DEBUG) {
-                                                                                                                        
+                                                  if(DEBUG) {                                                             
                                                               CLIGNO=TEMPSREST;               
                                                               cligno();
                                                               delay (5000);
                                                             }
-                                                              
+
                                                               TEMPSRESTT=(((TEMPSREST-1)*60)+((60-now.minute()))*60000);
                                                                
                                                                if( TEMPSRESTT >= 10800000) {
@@ -153,9 +161,7 @@ void cligno() {
 }
 
 void changh() {
-   //Heure actuel
   DateTime now = RTC.now();
-
   if(now.month() == 1) { 
                         TSTART=8;
                         TEND=18; 
