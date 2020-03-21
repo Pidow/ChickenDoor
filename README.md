@@ -36,3 +36,7 @@ RTC DS3231 allow to have Temp information.
 I have put an relay to avoid battery consuming to maintain the servomotor position.
 FYI Servomotor have only 180° angle, i have create a 3D print wheel to open the door.
 ```
+
+> I'm available if any question
+> Have fun
+>    ARNAUD TOCABENS.
