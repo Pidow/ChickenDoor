@@ -37,6 +37,8 @@ I have put an relay to avoid battery consuming to maintain the servomotor positi
 FYI Servomotor have only 180° angle, i have create a 3D print wheel to open the door.
 ```
 
-> I'm available if any question
-> Have fun
+> I'm available if any question.
+> 
+> Have fun !
+> 
 >    ARNAUD TOCABENS.
