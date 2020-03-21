@@ -1,20 +1,28 @@
 # ChickenDoor
-Systeme d'ouverture et de fermeture automatique du poulailler
-
-# Header 1
-
-For this version i have used:
-ATTiny167 Digispark Pro
-RTC DS3231 (Real Time clock)
-Relay for Servomotor
-Servomotor MG995
-Battery holder 4 battery 1,5 v (x2)
-Oled screen 128x64 I2C SPI serial.
+Two version actualy existing.
 
 TARGET:
 Move the chicken house doors 2 times per day.
 Posibble to connect the Oled screen sometimes to have information.
-Estimate battery lifetime: 8 month with 460mA battery.
+Estimate battery lifetime: 8 month with AAA battery(x8).
+
+
+## FIRST VERSION
+*   ATTINY85 Digispark
+*   RTC DS1307 (Real Time clock)
+*   Relay for Servomotor
+*   Servomotor MG995
+*   Battery holder 4 battery 1,5 v (x2)
+*   LED (to have some information
+
+## SECOND VERSION
+*   ATTiny167 Digispark Pro
+*   RTC DS3231 (Real Time clock)
+*   Relay for Servomotor
+*   Servomotor MG995
+*   Battery holder 4 battery 1,5 v (x2)
+*   Oled screen 128x64 I2C SPI serial.
+
 
 How it's work:
 Push software to Digispark.
