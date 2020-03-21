@@ -7,7 +7,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 
 
 ## FIRST VERSION cost: less 15€
-![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Assy%20view/REAL%20VIEW.png)
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Assy%20view/REAL%20VIEW.png?raw=true)
 *   ATTINY85 Digispark
 *   RTC DS1307 (Real Time clock)
 *   Relay for Servomotor
