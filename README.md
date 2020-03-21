@@ -16,6 +16,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 *   LED (to have some information
 
 ## SECOND VERSION cost: less 30€
+![SECOND VERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/0.Definition.jpg)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
 *   Relay for Servomotor
@@ -29,9 +30,9 @@ Push software to Digispark, connect all component following instructions.
 The system is ready !
 
 Note:
-If the RTC have power lost, software update it automaticaly.
+If the RTC have power lost, software update it time automaticaly.
 Oled screen & RTC use the same SDA and SCL connection to DIGISPARK.
 RTC DS3231 allow to have Temp information.
 I have put an relay to avoid battery consuming to maintain the servomotor position.
-Becarefull Servomotor have only 180° angle, i have create a 3D print wheel to open the door.
+FYI Servomotor have only 180° angle, i have create a 3D print wheel to open the door.
 ```
