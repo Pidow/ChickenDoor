@@ -1,5 +1,4 @@
 # ChickenDoor
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/1.Setup.png?raw=true)
 Two version actualy existing (see info file in each folder)
 
 TARGET:
@@ -18,6 +17,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 
 ## SECOND VERSION cost: less 30€
 ![SECOND VERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/0.Definition.jpg?raw=true)
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/1.Setup.png?raw=true)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
 *   Relay for Servomotor
