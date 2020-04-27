@@ -1,8 +1,8 @@
 # ChickenDoor
 3 versions actualy existing (see info file in each folder)
 
-TARGET:
 ![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/ouvert.png?raw=true)
+TARGET:
 Move the chicken house doors 2 times per day.
 Estimate battery lifetime: 8 month with AAA battery(x8).
 
