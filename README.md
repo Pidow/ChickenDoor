@@ -1,7 +1,8 @@
 # ChickenDoor
-Two version actualy existing (see info file in each folder)
+3 versions actualy existing (see info file in each folder)
 
 TARGET:
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/ouvert.png?raw=true)
 Move the chicken house doors 2 times per day.
 Estimate battery lifetime: 8 month with AAA battery(x8).
 
@@ -26,7 +27,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 *   Oled screen 128x64 I2C SPI serial.
 
 ## THIRD VERSION DISGISPARK PRO VERSION & LIGHT SENSOR cost: less 20€ 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/IMG_0202.jpg?raw=true)
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Connection.jpg?raw=true)
 ![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Light%20Sensor.jpg?raw=true)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
