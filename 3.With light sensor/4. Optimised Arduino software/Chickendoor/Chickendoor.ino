@@ -2,6 +2,7 @@
 #include <DigisparkOLED.h>
 #include <Wire.h>
 #include "chickendoor_128x64c1.h"
+
 //***********WATCHDOG SLEEP MODE ***********
 // using watch dog instead of delay
 // Soft with delay: Power consumption: 0.108-0.120W
@@ -15,23 +16,25 @@
 //***********SECTION RTC DS3231 ************
 #include "RTClib.h"
 RTC_DS3231 rtc;
+
 //***********SECTION SERVOMOTEUR ***********
-  #include <SimpleServo.h>
-  SimpleServo servo;
+#include <SimpleServo.h>
+SimpleServo servo;
   
 //***********VARIABLE**********************
 int TSTART=10;//horaire ouverture par defaut
 int TEND=20;//horaire fermeture par defaut
 bool PORTEOUV=0;//0:fermé - 1:ouvert
-int sensorValue = 0; //Capteur solaire
+int sensorValue = 0; //Capteur solaire: 1:Nuit 0:Jour
 bool TIME= 0;//Force MAJ RTC
 
 //***********LANCEMENT PROG***************
 void setup() {
+
 //***********WATCH DOG ********************
   // Power Saving setup
   for (byte i = 0; i < 6; i++) {
-    pinMode(i, INPUT);      // Met tous les port comme INPUT pour economisé l'energie
+    pinMode(i, INPUT);      // Met tous les ports en INPUT pour economiser l'energie
     digitalWrite (i, LOW);  //
   }
   adc_disable();          // Desactive le convertisseur Analog-to-Digital
@@ -50,7 +53,6 @@ pinMode(3,INPUT);
   servo.attach(5);
   ouvrir(); //On ouvre la porte par defaut
 
-  
 //*******ACTIVATION ECRAN OLED *******
   oled.begin();
   oled.clear();
@@ -76,6 +78,7 @@ pinMode(3,INPUT);
                               }
         delay(1000);
 		}
+   changh();
 		
 }
 void loop() {
@@ -85,8 +88,7 @@ void loop() {
      
 if ((TSTART == now.hour()) && (PORTEOUV == 0)) { //Heure ouverture
                             ouvrir();
-                                                }
-                                                
+                                                }                                                
 if(( now.hour() > TSTART) && (PORTEOUV == 0)) { //Depassement on ouvre
                             ouvrir();
                                                 }
@@ -98,20 +100,15 @@ if ((TEND == now.hour()) && (PORTEOUV == 1)) {//Heure fermeture
 if ((now.hour() > TEND) && (PORTEOUV == 1)) { //au cas ou le delay depasse l'heure de fermeture peut importe etat lumiere ex panne
                           fermer();
                           changh();
-                                                }
-
-                                                ecran();
-                                                attendre();
-
-
-
-                           
+                          }
+ecran();
+attendre();                          
 }
 
 void attendre() {
-                            sleep_enable();
-                            sleep_cpu();
-                            }
+                sleep_enable();
+                sleep_cpu();
+                }
 
 ISR (WDT_vect) {
                 WDTCR |= _BV(WDIE);
@@ -138,46 +135,45 @@ void fermer() {
                }
 			   
 void ecran() {
-  DateTime now = rtc.now();
-  oled.begin();
-  oled.clear();			
+                DateTime now = rtc.now();
+                oled.begin();
+                oled.clear();			
+                //oled.setCursor(0, 2);
+                oled.setFont(FONT8X16);
   
-
-  //oled.setCursor(0, 2);
-  oled.setFont(FONT8X16);
-  
-  //AFFICHE LE TEMPS RESTANT AVANT PROCHAINE ACTION
-  
-  oled.print(F("PROCHAIN:"));
-       if (now.hour() < TSTART) {  oled.print(TSTART); }
-       if ( ( ( now.hour() > TSTART) || (now.hour() == TSTART)) && ( now.hour() < TEND)) {  oled.print(TEND); }                                          
-       if (( now.hour() > TEND) || (now.hour() == TEND)) {  oled.print(TSTART); }
-  oled.print(F("h"));         
-    oled.println();
+  //AFFICHE LA PROCHAINE ACTION
+                  oled.print(F("PROCHAIN:"));
+                if (now.hour() < TSTART) {  oled.print(TSTART); }
+                if ( ( ( now.hour() > TSTART) || (now.hour() == TSTART)) && ( now.hour() < TEND)) {  oled.print(TEND); }                                          
+                if (( now.hour() > TEND) || (now.hour() == TEND)) {  oled.print(TSTART); }
+                oled.print(F("h"));         
+                oled.println();
+                
  //AFFICHE L'heure actuelle
-  oled.print(now.hour(), DEC);
-  oled.print(F(":"));
-  oled.print(now.minute(), DEC);
-  oled.print(F(":"));
-  oled.print(now.second(), DEC);
+                oled.print(now.hour(), DEC);
+                oled.print(F(":"));
+                oled.print(now.minute(), DEC);
+                oled.print(F(":"));
+                oled.print(now.second(), DEC);
+                
 //AFFICHE LA TEMPERATURE
- oled.println();
- oled.print(F("Temp:"));
- oled.print(rtc.getTemperature());
- oled.print(F(" C"));
+                oled.println();
+                oled.print(F("Temp:"));
+                oled.print(rtc.getTemperature());
+                oled.print(F(" C"));
+                
 //AFFICHE LA VALEUR CAPTEUR SOLAIRE
-  oled.println();
-  oled.print(F("ETAT:"));
-  if(sensorValue) {
-       oled.print(F("NUIT"));
-   } else  {
-      oled.print(F("JOUR"));
-  };
-  //oled.print(sensorValue);
+                oled.println();
+                oled.print(F("ETAT:"));
+                if(sensorValue) {
+                                oled.print(F("NUIT"));
+                } else  {
+                                oled.print(F("JOUR"));
+                };
   }
 
 void changh() {
-   DateTime now = rtc.now();
+  DateTime now = rtc.now();
   if(now.month() == 1) { 
                         TSTART=9;
                         TEND=18; 
