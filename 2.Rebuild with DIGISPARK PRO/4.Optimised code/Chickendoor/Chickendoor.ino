@@ -22,11 +22,12 @@ RTC_DS3231 rtc;
 SimpleServo servo;
   
 //***********VARIABLE**********************
-int TSTART=10;//horaire ouverture par defaut
+int TSTART=9;//horaire ouverture par defaut
 int TEND=20;//horaire fermeture par defaut
 int MEND=00;//Min fermeture par defaut
 bool PORTEOUV=0;//0:fermé - 1:ouvert
 bool TIME= 0;//Force MAJ RTC
+int buttonState = 0; // BOUTON ON OU OFF. LOW= activé HIGH=non activé
 
 //***********LANCEMENT PROG***************
 void setup() {
@@ -48,7 +49,8 @@ void setup() {
   //pinMode(3, OUTPUT); // moteur relai sur PIN 3
   pinMode(5, OUTPUT); //MOTEUR sur PIN5
   servo.attach(5);
-  ouvrir(); //On ouvre la porte par defaut
+//*******BOUTON  ************************
+pinMode(4, INPUT);
 
 //*******ACTIVATION ECRAN OLED *******
   oled.begin();
@@ -59,10 +61,10 @@ void setup() {
   
 //******VERIF RTC + MAJ *************  
     if (! rtc.begin()) {
-          oled.println(F("Connection RTC Impossible"));
+          oled.println(F("RTC CONNECT FAIL"));
       } else {
           if(TIME) {
-         oled.print(F("DEBUG:MISE A JOUR RTC OK !"));
+         oled.print(F("DBG:RTC DONE !"));
          rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); 
          delay(1000);
          };
@@ -70,27 +72,45 @@ void setup() {
           oled.setFont(FONT8X16);
           oled.print(F("RTC OK"));
           if (rtc.lostPower()) {
-                            oled.print(F("MISE A JOUR RTC OK !!"));
+                            oled.print(F("UPDATE RTC DONE!"));
                             rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
                               }
         delay(1000);
 		}
+
+//******DEBUG OPTION **************   
+   oled.clear();
+   oled.print(F("*PRESS TO DEBUG*"));
+  // oled.println();
+   //oled.print(F("1234567890123456"));
+   delay (5000);
+   buttonState = digitalRead(4);
+   if (buttonState == LOW) {   
+    oled.clear();
+    dbg(); }//appui bouton 
+    
+   oled.clear();
    changh();
 		
 }
 void loop() {
   DateTime now = rtc.now();
+  buttonState = digitalRead(4);
   
-if ((TSTART == now.hour()) && (MEND == now.minute()) && (PORTEOUV == 0)) { //Heure ouverture
+if ((TSTART == now.hour()) && (PORTEOUV == 0)) { //Heure ouverture
                             ouvrir();
-                                                }
+                            }
                                                 
 if ((TEND == now.hour()) && (MEND == now.minute()) && (PORTEOUV == 1)) {//Heure fermeture
                             fermer();
                             changh();
                             }
-ecran();
-attendre();                          
+                              
+if (buttonState == LOW) {   ecran(); //appui bouton
+                            delay (10000);
+                            oled.clear();
+                            }  
+attendre();                     
 }
 
 void attendre() {
@@ -101,7 +121,29 @@ void attendre() {
 ISR (WDT_vect) {
                 WDTCR |= _BV(WDIE);
                 }
-                
+
+void dbg() {
+  oled.print(F("***DEBUG MODE***"));
+  delay (3000);
+  oled.println();
+  oled.print(F("PRESS TO CLOSE"));
+  buttonState = digitalRead(4); 
+  while(buttonState == HIGH)  { buttonState = digitalRead(4); delay (100); }// si pas appui
+  fermer();
+  delay (3000);
+  oled.println();
+  oled.print(F("PRESS TO OPEN"));
+  buttonState = digitalRead(4);   
+  while(buttonState == HIGH)  { buttonState = digitalRead(4); delay (100); }// si pas appui
+  ouvrir ();
+  delay (3000);
+  oled.println(); 
+  oled.print(F("PRESS TO RETURN"));
+  buttonState = digitalRead(4);
+  while(buttonState == HIGH)  { buttonState = digitalRead(4); delay (100); }// si pas appui
+  return;     
+}
+
 void ouvrir() {
               digitalWrite(3, HIGH);
               delay(100);
@@ -148,6 +190,12 @@ void ecran() {
                 oled.print(F("Temp:"));
                 oled.print(rtc.getTemperature());
                 oled.print(F(" C"));
+
+//ACTION BOUTON
+             oled.println();
+             oled.print(F("Bouton:"));
+             if (buttonState == HIGH) {   oled.print(F("OFF")); } //OFF
+             if (buttonState == LOW) {   oled.print(F("ON")); } //ON
                 
   }
 
