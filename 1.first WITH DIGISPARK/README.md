@@ -1,7 +1,7 @@
 # ChickenDoor
 3 versions actualy existing (see info file in each folder)
 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/ouvert.png?raw=true)
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/ouvert.png?raw=true)
 
 TARGET:
 Move the chicken house doors 2 times per day.
@@ -9,7 +9,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 
 
 ## FIRST VERSION DIGISPARK STD VERSION cost: less 7€
-![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Assy%20view/REAL%20VIEW.png?raw=true)
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/REAL%20VIEW.png?raw=true)
 *   ATTINY85 Digispark
 *   RTC DS1307 (Real Time clock)
 *   Relay for Servomotor
@@ -17,26 +17,12 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 *   Battery holder 4 battery 1,5 v (x2)
 *   LED (to have some information
 
-## SECOND VERSION DIGISPARK PRO VERSION cost: less 15€
-![SECOND VERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/0.Definition.jpg?raw=true)
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/1.Setup.png?raw=true)
-*   ATTiny167 Digispark Pro
-*   RTC DS3231 (Real Time clock)
-*   Relay for Servomotor
-*   Servomotor MG995
-*   Battery holder 4 battery 1,5 v (x2)
-*   Oled screen 128x64 I2C SPI serial.
 
-## THIRD VERSION DISGISPARK PRO VERSION & LIGHT SENSOR cost: less 20€ 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Connection.jpg?raw=true)
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Light%20Sensor.jpg?raw=true)
-*   ATTiny167 Digispark Pro
-*   RTC DS3231 (Real Time clock)
-*   Relay for Servomotor
-*   Servomotor MG995
-*   Battery holder 4 battery 1,5 v (x2)
-*   Oled screen 128x64 I2C SPI serial.
-*   Light Sensor
+## CONNECTION
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/Digispark.png?raw=true)
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20%26%20photos/Relai.png?raw=true)
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/rtc%20module.png?raw=true)
+
 ```
 How it's work:
 Push software to Digispark, connect all component following instructions.
