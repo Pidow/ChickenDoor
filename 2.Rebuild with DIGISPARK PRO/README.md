@@ -20,6 +20,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 
 
 ## CONNECTION
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro.png?raw=true)
 ![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro%20connections&.jpg?raw=true)
 
 ```
