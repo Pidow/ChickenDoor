@@ -8,8 +8,8 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 
 
 ## THIRD VERSION DISGISPARK PRO VERSION & LIGHT SENSOR cost: less 20€ 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Connection.jpg?raw=true)
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Light%20Sensor.jpg?raw=true)
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor%20with%20DIGISPARK%20PRO/1.Assy%20view/Screen%20information.jpg?raw=true)
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor%20with%20DIGISPARK%20PRO/1.Assy%20view/Light%20Sensor.jpg?raw=true)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
 *   Relay for Servomotor
@@ -21,7 +21,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 
 ## CONNECTION
 ![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro.png?raw=true)
-![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro%20connections&.jpg?raw=true)
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro%20connections&.jpg?raw=true)
 
 ```
 How it's work:
