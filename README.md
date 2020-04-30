@@ -32,7 +32,7 @@ Press button after boot to enter in debug mode.
 ![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/DBG%20MODE.jpg?raw=true)
 
 Press 8secondes to wake up the screen when need. (screen shutdown after boot to reduce power consuming).
-![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/BUTTON%20ACTION.jpg)
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/BUTTON%20ACTION.jpg?raw=true)
 
 
 ## CONNECTION
