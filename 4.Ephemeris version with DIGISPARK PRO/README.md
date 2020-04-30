@@ -9,7 +9,7 @@
 
 ## Description
 
-Startup view
+Startup view.
 ![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/PRESENTATION.jpg?raw=true)
 
 Press button after boot to enter in debug mode.
