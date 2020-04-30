@@ -1,42 +1,63 @@
 # ChickenDoor
-3 versions actualy existing (see info file in each folder)
 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/ouvert.png?raw=true)
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/ouvert.png?raw=true)
 
 TARGET:
 Move the chicken house doors 2 times per day.
 Estimate battery lifetime: 8 month with AAA battery(x8).
+###VERSION HISTORY
+1St version: Digispark STD with LED to have some information. Not very userfriendly. To add a screen we should use digispark pro.
+2nd version: Digispark pro with screen (code not optimised)	
+3rd version: Digispark pro with screen and light sensor. After test, Tune the light sensor is very difficult, black cloud may close the door.
+4th version: Actually the better version, base on south french Ephemeris. Code optimised, add watchdog sleep mode, add a push button to enter in debug mode and to wake up the screen.
 
-
-## FIRST VERSION DIGISPARK STD VERSION cost: less 7€
-![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Assy%20view/REAL%20VIEW.png?raw=true)
-*   ATTINY85 Digispark
-*   RTC DS1307 (Real Time clock)
-*   Relay for Servomotor
-*   Servomotor MG995
-*   Battery holder 4 battery 1,5 v (x2)
-*   LED (to have some information
-
-## SECOND VERSION DIGISPARK PRO VERSION cost: less 15€
-![SECOND VERSION](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/0.Definition.jpg?raw=true)
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/2.Rebuild%20with%20DIGISPARK%20PRO/1.Assy%20view/1.Setup.png?raw=true)
+## FOURTH VERSION DISGISPARK PRO VERSION & PUSH BUTTON: less 15€
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Description.jpg?raw=true)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
-*   Relay for Servomotor
 *   Servomotor MG995
 *   Battery holder 4 battery 1,5 v (x2)
 *   Oled screen 128x64 I2C SPI serial.
 
-## THIRD VERSION DISGISPARK PRO VERSION & LIGHT SENSOR cost: less 20€ 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Connection.jpg?raw=true)
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor/1.Assy%20view/Light%20Sensor.jpg?raw=true)
-*   ATTiny167 Digispark Pro
-*   RTC DS3231 (Real Time clock)
-*   Relay for Servomotor
-*   Servomotor MG995
-*   Battery holder 4 battery 1,5 v (x2)
-*   Oled screen 128x64 I2C SPI serial.
-*   Light Sensor
+
+## Description
+
+Startup view.
+
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/PRESENTATION.jpg?raw=true)
+
+Press button after boot to enter in debug mode.
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/DBG%20MODE.jpg?raw=true)
+
+Press 8secondes to wake up the screen when need. (screen shutdown after boot to reduce power consuming).
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/BUTTON%20ACTION.jpg)
+
+
+## CONNECTION
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro.png?raw=true)
+
+Connection for the digispark pro
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/digispark%20pro%20connections&.jpg?raw=true)
+
+Connection for the Servomotor MG995
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/MG995.png?raw=true)
+
+
+## 3D PRINT
+Motor support:
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Servo%20motor%203D%20print%20support.jpg?raw=true)
+
+1/2 wheel
+![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Wheel%203D%20print.jpg?raw=true)
+
+
+##VERSION HISTORY
+1St version: Digispark STD with LED to have some information. Not very userfriendly. To add a screen we should use digispark pro.
+2nd version: Digispark pro with screen (code not optimised)	
+3rd version: Digispark pro with screen and light sensor. After test, Tune the light sensor is very difficult, black cloud may close the door.
+4th version: Actually the better version, base on south french Ephemeris. Code optimised, add watchdog sleep mode, add a push button to enter in debug mode and to wake up the screen.
+
+
 ```
 How it's work:
 Push software to Digispark, connect all component following instructions.
