@@ -1,6 +1,5 @@
 ## FOURTH VERSION DISGISPARK PRO VERSION & PUSH BUTTON: less 15€ 
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor%20with%20DIGISPARK%20PRO/1.Assy%20view/Screen%20information.jpg?raw=true)
-![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/3.With%20light%20sensor%20with%20DIGISPARK%20PRO/1.Assy%20view/Light%20Sensor.jpg?raw=true)
+![SCREENLOGO](![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Description.jpg?raw=true))
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
 *   Servomotor MG995
@@ -9,7 +8,6 @@
 
 
 ## Description
-![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Description.jpg?raw=true)
 
 Startup view
 ![FIRSTVERSION](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/PRESENTATION.jpg?raw=true)
