@@ -47,7 +47,7 @@ Motor support:
 
 ```
 How it's work:
-Push software to Digispark, connect all component following instructions.
+Push software to Digispark [following instruction](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/3.Arduino%20code/Digispark%20arduino%20configuration.pdf), connect all component following instructions.
 The system is ready !
 
 Note:
