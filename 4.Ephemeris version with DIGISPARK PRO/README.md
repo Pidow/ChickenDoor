@@ -10,7 +10,7 @@ Estimate battery lifetime: 8 month with AAA battery(x8).
 ![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Description.jpg?raw=true)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
-*   Servomotor MG995
+*   Switch button
 *   Battery holder 4 battery 1,5 v (x2)
 *   Oled screen 128x64 I2C SPI serial.
 
