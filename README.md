@@ -6,7 +6,7 @@ TARGET:
 Move the chicken house doors 2 times per day.
 Estimate battery lifetime: 8 month with AAA battery(x8).
 
-##VERSION HISTORY
+### VERSION HISTORY
 *   1St version: Digispark STD with LED to have some information. Not very userfriendly. To add a screen we should use digispark pro.
 *   2nd version: Digispark pro with screen (code not optimised)	
 *   3rd version: Digispark pro with screen and light sensor. After test, Tune the light sensor is very difficult, black cloud may close the door.
