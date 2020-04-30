@@ -5,11 +5,13 @@
 TARGET:
 Move the chicken house doors 2 times per day.
 Estimate battery lifetime: 8 month with AAA battery(x8).
-###VERSION HISTORY
-1St version: Digispark STD with LED to have some information. Not very userfriendly. To add a screen we should use digispark pro.
-2nd version: Digispark pro with screen (code not optimised)	
-3rd version: Digispark pro with screen and light sensor. After test, Tune the light sensor is very difficult, black cloud may close the door.
-4th version: Actually the better version, base on south french Ephemeris. Code optimised, add watchdog sleep mode, add a push button to enter in debug mode and to wake up the screen.
+
+##VERSION HISTORY
+*   1St version: Digispark STD with LED to have some information. Not very userfriendly. To add a screen we should use digispark pro.
+*   2nd version: Digispark pro with screen (code not optimised)	
+*   3rd version: Digispark pro with screen and light sensor. After test, Tune the light sensor is very difficult, black cloud may close the door.
+*   4th version: Actually the better version, base on south french Ephemeris. Code optimised, add watchdog sleep mode, add a push button to enter in debug mode and to wake up the screen.
+
 
 ## FOURTH VERSION DISGISPARK PRO VERSION & PUSH BUTTON: less 15€
 ![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Description.jpg?raw=true)
