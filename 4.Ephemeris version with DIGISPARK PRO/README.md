@@ -1,4 +1,12 @@
-## FOURTH VERSION DISGISPARK PRO VERSION & PUSH BUTTON: less 15€ 
+# ChickenDoor
+
+![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/definition.png?raw=true)![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/1.first%20WITH%20DIGISPARK/1.Connection%20&%20photos/ouvert.png?raw=true)
+
+TARGET:
+Move the chicken house doors 2 times per day.
+Estimate battery lifetime: 8 month with AAA battery(x8).
+
+## FOURTH VERSION DISGISPARK PRO VERSION & PUSH BUTTON: less 15€
 ![SCREENLOGO](https://github.com/Pidow/ChickenDoor/blob/master/4.Ephemeris%20version%20with%20DIGISPARK%20PRO/1.Assy%20view/Description.jpg?raw=true)
 *   ATTiny167 Digispark Pro
 *   RTC DS3231 (Real Time clock)
